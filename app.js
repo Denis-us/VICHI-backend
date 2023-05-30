@@ -5,7 +5,7 @@ require('dotenv').config()
 
 global.basedir = __dirname
 
-// const userRouter = require('./routes/api/auth')
+const photosRouter = require('./routes/api/photos')
 
 const app = express()
 
@@ -16,7 +16,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static("public"))
 
-// app.use('/api/auth', userRouter)
+app.use('/api/photos', photosRouter)
 
 app.use((req, res) => {
   res.status(404).json({ status: 'error', code: 404, message: 'Not found' })

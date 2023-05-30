@@ -1,26 +1,15 @@
 const {Schema, model} = require('mongoose')
 
 const photosSchema = new Schema ({
-    name: {
+    image: {
       type: String,
-      required: [true, 'Set name for contact'],
+      required: [true, 'Set name for photo'],
     },
-    email: {
+    alt: {
       type: String,
-    },
-    phone: {
-      type: String,
-    },
-    favorite: {
-      type: Boolean,
-      default: false,
-    },
-    owner: {
-      type: Schema.Types.ObjectId,
-      ref: 'user',
     },
   }, {versionKey: false})
 
-  const Contacts = model('contacts', constactsSchema)
+  const Photos = model('photos', photosSchema)
   
-  module.exports = Contacts
+  module.exports = Photos
